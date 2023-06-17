@@ -2,11 +2,14 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
-const toDos = [];
+const TODOS_KEY = "todos";
+
+let toDos = [];
+//[]로 비어있으면 초기화가 됨(덮어씀)-> const를 let으로 바꿔서 업데이트가 가능하게 변경.
 
 //todos 넣으면 저장
 function saveToDos() {
-  localStorage.setItem("todos", JSON.stringify(toDos));
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 //todo 삭제 함수
@@ -35,8 +38,16 @@ function handleToDoSubmit(event) {
   const newTodo = toDoInput.value;
   toDoInput.value = "";
   toDos.push(newTodo);
-  paintToDo(newTodo); 
+  paintToDo(newTodo);
   saveToDos();
 }
-    
+
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos);
+  toDos = parsedToDos;
+  parsedToDos.forEach(paintToDo);
+}
