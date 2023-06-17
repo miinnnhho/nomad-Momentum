@@ -2,6 +2,13 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
+const toDos = [];
+
+//todos 넣으면 저장
+function saveToDos() {
+  localStorage.setItem("todos", JSON.stringify(toDos));
+}
+
 //todo 삭제 함수
 function deleteToDO(event) {
   const li = event.target.parentElement; //뭘 지웠는지 봐야해서 사용
@@ -27,7 +34,9 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value;
   toDoInput.value = "";
+  toDos.push(newTodo);
   paintToDo(newTodo);
+  saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
