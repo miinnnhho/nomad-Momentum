@@ -4,6 +4,7 @@ const loginButton = loginForm.querySelector("Button");
 const greeting = document.querySelector("#greeting");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username"; //오타 방지로 고정
+
 // 자주 쓰는 건 대문자로 고정해놓으면 좋음
 //(실수하고싶지 않은 string인 걸 상기시킴)
 function onLoginSubmit(event) {
@@ -27,6 +28,7 @@ if (savedUsername === null) {
 } else {
   //show th greeting
   paintGreetings(savedUsername);
+  // toDoForm.classList.remove(HIDDEN_CLASSNAME);
 }
 
 // 함수명() 에서 ()을 붙이는 건 -> 바로 실행한다는 뜻

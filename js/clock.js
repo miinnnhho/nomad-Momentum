@@ -4,8 +4,8 @@ function getClock() {
   const date = new Date();
   const hours = String(date.getHours()).padStart(2, "0");
   const minutes = String(date.getMinutes()).padStart(2, "0");
-  const seconds = String(date.getSeconds()).padStart(2, "0");
-  clock.innerText = `${hours}:${minutes}:${seconds}`; //시간 표현
+  // const seconds = String(date.getSeconds()).padStart(2, "0");
+  clock.innerText = `${hours}:${minutes}`; //시간 표현
 }
 getClock();
 setInterval(getClock, 1000); //함수를 계속 호출 -> 실시간처럼 보임

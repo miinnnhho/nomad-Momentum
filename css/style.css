@@ -1,3 +1,118 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url(/img/0.jpg);
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+h1 {
+  margin: 0;
+}
 .hidden {
   display: none;
-} 
+}
+#login-form div {
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+}
+#login-form input[type="text"] {
+  border: none;
+  width: 600px;
+  font-size: 40px;
+  border-bottom: 2px solid white;
+  background: inherit;
+}
+#login-form input:focus {
+  outline: none;
+  color: white;
+  text-align: center;
+}
+
+#clock {
+  font-size: 1050%;
+  letter-spacing: -5px;
+  margin-bottom: 0;
+}
+
+/* todo-form 만들기 */
+#todo-form {
+  border: none;
+  border: 0px 0px 0px 0px;
+}
+
+/* toDo 입력양식 디자인 */
+#todo-form input[type="text"] {
+  border: none;
+  width: 600px;
+  font-size: 40px;
+  border-bottom: 2px solid white;
+  background: inherit;
+}
+
+#todo-form input:focus {
+  outline: none;
+  color: white;
+  text-align: center;
+}
+
+#todo-form div {
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+}
+#todo-list li {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  margin-bottom: 10px;
+  align-items: center;
+  max-width: 100%;
+  padding: 5px;
+  font-size: min(38px, 3.5vw);
+  word-break: break-all;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+#todo-list button {
+  margin-left: 5px;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#weather {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  cursor: pointer;
+}
+#weather li:first-child {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#weather li:last-child {
+  margin-top: -10px;
+  display: flex;
+  margin-top: 1px;
+}
+#quote {
+  width: 80%;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  cursor: pointer;
+}

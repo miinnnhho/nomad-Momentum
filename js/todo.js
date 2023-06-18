@@ -30,6 +30,12 @@ function paintToDo(newTodo) {
   toDoList.appendChild(li);
 }
 
+// function checkingToDo(event) {
+//   // const span = event.path[0]; //아래와 같음
+//   const span = event.target;
+//   span.classList.toggle("strikethrough");
+// } -> 다시 시도
+
 function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value;
